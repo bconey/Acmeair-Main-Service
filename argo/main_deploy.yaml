@@ -1,0 +1,16 @@
+apiVersion: apps.openliberty.io/v1beta2
+kind: OpenLibertyApplication
+metadata:
+  name: acmeair-main
+  namespace: acmeair-ol
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
+spec:
+  expose: true
+  route:
+    path: /acmeair
+  applicationImage: 'docker-na-public.artifactory.swg-devops.com/hyc-wassvt-team-image-registry-docker-local/acmeair/acmeair-main-service:latest'
+  service:
+    type: ClusterIP
+  pullPolicy: Always
+  replicas: 1

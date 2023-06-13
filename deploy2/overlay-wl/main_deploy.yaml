@@ -1,0 +1,17 @@
+apiVersion: liberty.websphere.ibm.com/v1
+kind: WebSphereLibertyApplication
+metadata:
+    name: acmeair-main
+    annotations:
+      argocd.argoproj.io/sync-wave: "3"
+spec:
+  license:
+    accept: true
+  expose: true
+  route:
+    path: /acmeair
+  applicationImage: 'docker-na-public.artifactory.swg-devops.com/hyc-wassvt-team-image-registry-docker-local/acmeair/acmeair-main-service:wl-jdk8-java17'
+  service:
+    type: ClusterIP
+  pullPolicy: Always
+  replicas: 1
