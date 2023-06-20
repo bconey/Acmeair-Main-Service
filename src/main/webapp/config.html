@@ -106,7 +106,7 @@
     	});
     	
        	dojo.xhrGet({
-			url: window.location.protocol+ '//' + window.location.host + '/flight/config/countFlights',
+			url: window.location.protocol+ '//' + 'app-staging-coney-0613-aaflight.apps.appe-cp-01.axm8.p1.openshiftapps.com' + '/flight/config/countFlights',
 			handleAs: "json",
 			load: function(response, ioArgs) {			    	
 		    	document.getElementById('flightData').innerHTML=response;
@@ -117,7 +117,7 @@
     	});
 	 
        	dojo.xhrGet({
-			url: window.location.protocol+ '//' + window.location.host + '/flight/config/countFlightSegments',
+			url: window.location.protocol+ '//' + 'app-staging-coney-0613-aaflight.apps.appe-cp-01.axm8.p1.openshiftapps.com' + '/flight/config/countFlightSegments',
 			handleAs: "json",
 			load: function(response, ioArgs) {			    
 		    	document.getElementById('flightSegmentData').innerHTML=response;
@@ -141,7 +141,7 @@
     	
     	dojo.xhrGet({
     		
-			url: window.location.protocol+ '//' + window.location.host + '/flight/config/countAirports',
+			url: window.location.protocol+ '//' + 'app-staging-coney-0613-aaflight.apps.appe-cp-01.axm8.p1.openshiftapps.com' + '/flight/config/countAirports',
 			handleAs: "json",
 			load: function(response, ioArgs) {	
 		    	document.getElementById('airportData').innerHTML=response;
