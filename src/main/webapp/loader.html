@@ -60,7 +60,7 @@
 		});
     	
     	dojo.xhrGet({
-        url: window.location.protocol+ '//' + window.location.host + '/flight/loader/query',
+        url: window.location.protocol+ '//' + 'app-staging-coney-0613-aaflight.apps.appe-cp-01.axm8.p1.openshiftapps.com' + '/flight/loader/query',
         handleAs: "text",
         load: function(response, ioArgs) {
             updateFlightFormData(response);
@@ -104,7 +104,7 @@
     	  content : {
     	    daysToLoad: dijit.byId('flightDaysInput').value
           },
-    		url: window.location.protocol+ '//' + window.location.host + '/flight/loader/load',
+    		url: window.location.protocol+ '//' + 'app-staging-coney-0613-aaflight.apps.appe-cp-01.axm8.p1.openshiftapps.com' + '/flight/loader/load',
     		load: function(response, ioArgs) {
     			hideWaitDialog();
     			alert('Flight Database Loaded, response: ' + response);
