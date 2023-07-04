@@ -61,7 +61,7 @@
 				returnDate: returnDate,
 				oneWay: oneWayChecked
 			},
-			url: window.location.protocol+ '//' + window.location.host + '/flight/queryflights',
+			url: window.location.protocol+ '//' + 'app-staging-coney-0703-aaflight.apps.appe-cp-01.axm8.p1.openshiftapps.com' + '/flight/queryflights',
 			handleAs: "json",
 			load: function(response, ioArgs) {
 				if (response.tripFlights.length == 0) {
@@ -236,7 +236,7 @@
 		
 		dojo.xhrPost({
 			content : xhrContent,
-			url: window.location.protocol+ '//' + window.location.host + '/booking/bookflights',
+			url: window.location.protocol+ '//' + 'app-staging-coney-0703-aabook.apps.appe-cp-01.axm8.p1.openshiftapps.com' + '/booking/bookflights',
 			handleAs: "json",
 			load : function(response, ioArgs) {
 				dojo.byId("bookingToFlight").innerHTML = response.departBookingId;
