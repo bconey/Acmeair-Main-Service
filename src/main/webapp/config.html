@@ -46,11 +46,11 @@
     	//createAndStartGrid();
     }      
     
-    function getRuntimeInformation(service, url1, url2) {
+    function getRuntimeInformation(service, locationhost, url1, url2) {
     	var grid, store, dataStore;
     	
     	dojo.xhrGet({
-			url: window.location.protocol+ '//' + window.location.host + url1 + url2 + '/config/runtime',
+			url: window.location.protocol+ '//' + locationhost + url1 + url2 + '/config/runtime',
 			handleAs: "json",
 			load: function(response, ioArgs) {
 				var theData = { items : response };
@@ -73,11 +73,11 @@
     
     
     
-    function getActiveDataServiceInfo(service,url1,url2) {
+    function getActiveDataServiceInfo(service,locationhost,url1,url2) {
     	var grid, store, dataStore;
     	
     	dojo.xhrGet({
-			url: window.location.protocol+ '//' + window.location.host + url1 + url2 +'/config/activeDataService',
+			url: window.location.protocol+ '//' + locationhost + url1 + url2 +'/config/activeDataService',
 			handleAs: "text",
 			load: function(response, ioArgs) {	
 		    	document.getElementById('activeServiceLoc_'+service).innerHTML=response;		    	
@@ -242,14 +242,14 @@
           </table>
 			
 			<script type="text/javascript">
-				getRuntimeInformation('auth','/auth','');
+				getRuntimeInformation('auth','app-staging-coney-0703-aaauth.apps.appe-cp-01.axm8.p1.openshiftapps.com','/auth','');
 				
-				getRuntimeInformation('booking','/booking','');
-				getActiveDataServiceInfo('booking','/booking','');
-				getRuntimeInformation('customer','','/customer');
-				getActiveDataServiceInfo('customer','','/customer');
-				getRuntimeInformation('flight','/flight','');
-				getActiveDataServiceInfo('flight','/flight','');
+				getRuntimeInformation('booking','app-staging-coney-0703-aabook.apps.appe-cp-01.axm8.p1.openshiftapps.com','/booking','');
+				getActiveDataServiceInfo('booking','app-staging-coney-0703-aabook.apps.appe-cp-01.axm8.p1.openshiftapps.com','/booking','');
+				getRuntimeInformation('customer','app-staging-coney-0703-aacust.apps.appe-cp-01.axm8.p1.openshiftapps.com','','/customer');
+				getActiveDataServiceInfo('customer','app-staging-coney-0703-aacust.apps.appe-cp-01.axm8.p1.openshiftapps.com','','/customer');
+				getRuntimeInformation('flight','app-staging-coney-0703-aaflight.apps.appe-cp-01.axm8.p1.openshiftapps.com','/flight','');
+				getActiveDataServiceInfo('flight','app-staging-coney-0703-aaflight.apps.appe-cp-01.axm8.p1.openshiftapps.com','/flight','');
 			</script>
 	
 			<h2>Auth Service </h2>	 
