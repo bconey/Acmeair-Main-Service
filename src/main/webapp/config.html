@@ -94,7 +94,7 @@
     	var airportCodeMapping, booking, customer, customerSession, flight, flightSegment;
 
     	dojo.xhrGet({
-			url: window.location.protocol+ '//' + 'app-staging-coney-0703-aacust.apps.appe-cp-01.axm8.p1.openshiftapps.com' + '/customer/config/countCustomers',
+			url: window.location.protocol+ '//' + 'app-staging-coney-0703-aacust.us-east-1.c1a.appengine.dev.ibmappdomain.cloud' + '/customer/config/countCustomers',
 			handleAs: "json",
 			load: function(response, ioArgs) {	
 		    	//alert("Response: " + response);
@@ -106,7 +106,7 @@
     	});
     	
        	dojo.xhrGet({
-			url: window.location.protocol+ '//' + 'app-staging-coney-0703-aaflight.apps.appe-cp-01.axm8.p1.openshiftapps.com' + '/flight/config/countFlights',
+			url: window.location.protocol+ '//' + 'app-staging-coney-0703-aaflight.us-east-1.c1a.appengine.dev.ibmappdomain.cloud' + '/flight/config/countFlights',
 			handleAs: "json",
 			load: function(response, ioArgs) {			    	
 		    	document.getElementById('flightData').innerHTML=response;
@@ -117,7 +117,7 @@
     	});
 	 
        	dojo.xhrGet({
-			url: window.location.protocol+ '//' + 'app-staging-coney-0703-aaflight.apps.appe-cp-01.axm8.p1.openshiftapps.com' + '/flight/config/countFlightSegments',
+			url: window.location.protocol+ '//' + 'app-staging-coney-0703-aaflight.us-east-1.c1a.appengine.dev.ibmappdomain.cloud' + '/flight/config/countFlightSegments',
 			handleAs: "json",
 			load: function(response, ioArgs) {			    
 		    	document.getElementById('flightSegmentData').innerHTML=response;
@@ -129,7 +129,7 @@
        	
        	
     	dojo.xhrGet({
-			url: window.location.protocol+ '//' + 'app-staging-coney-0703-aabook.apps.appe-cp-01.axm8.p1.openshiftapps.com' + '/booking/config/countBookings',
+			url: window.location.protocol+ '//' + 'app-staging-coney-0703-aabook.us-east-1.c1a.appengine.dev.ibmappdomain.cloud' + '/booking/config/countBookings',
 			handleAs: "json",
 			load: function(response, ioArgs) {	
 		    	document.getElementById('bookingData').innerHTML=response;
@@ -141,7 +141,7 @@
     	
     	dojo.xhrGet({
     		
-			url: window.location.protocol+ '//' + 'app-staging-coney-0703-aaflight.apps.appe-cp-01.axm8.p1.openshiftapps.com' + '/flight/config/countAirports',
+			url: window.location.protocol+ '//' + 'app-staging-coney-0703-aaflight.us-east-1.c1a.appengine.dev.ibmappdomain.cloud' + '/flight/config/countAirports',
 			handleAs: "json",
 			load: function(response, ioArgs) {	
 		    	document.getElementById('airportData').innerHTML=response;
@@ -244,12 +244,12 @@
 			<script type="text/javascript">
 				getRuntimeInformation('auth','app-staging-coney-0711-aaauth.us-east-1.c1a.appengine.dev.ibmappdomain.cloud','/auth','');
 				
-				getRuntimeInformation('booking','app-staging-coney-0703-aabook.apps.appe-cp-01.axm8.p1.openshiftapps.com','/booking','');
-				getActiveDataServiceInfo('booking','app-staging-coney-0703-aabook.apps.appe-cp-01.axm8.p1.openshiftapps.com','/booking','');
-				getRuntimeInformation('customer','app-staging-coney-0703-aacust.apps.appe-cp-01.axm8.p1.openshiftapps.com','','/customer');
-				getActiveDataServiceInfo('customer','app-staging-coney-0703-aacust.apps.appe-cp-01.axm8.p1.openshiftapps.com','','/customer');
-				getRuntimeInformation('flight','app-staging-coney-0703-aaflight.apps.appe-cp-01.axm8.p1.openshiftapps.com','/flight','');
-				getActiveDataServiceInfo('flight','app-staging-coney-0703-aaflight.apps.appe-cp-01.axm8.p1.openshiftapps.com','/flight','');
+				getRuntimeInformation('booking','app-staging-coney-0703-aabook.us-east-1.c1a.appengine.dev.ibmappdomain.cloud','/booking','');
+				getActiveDataServiceInfo('booking','app-staging-coney-0703-aabook.us-east-1.c1a.appengine.dev.ibmappdomain.cloud','/booking','');
+				getRuntimeInformation('customer','app-staging-coney-0703-aacust.us-east-1.c1a.appengine.dev.ibmappdomain.cloud','','/customer');
+				getActiveDataServiceInfo('customer','app-staging-coney-0703-aacust.us-east-1.c1a.appengine.dev.ibmappdomain.cloud','','/customer');
+				getRuntimeInformation('flight','app-staging-coney-0703-aaflight.us-east-1.c1a.appengine.dev.ibmappdomain.cloud','/flight','');
+				getActiveDataServiceInfo('flight','app-staging-coney-0703-aaflight.us-east-1.c1a.appengine.dev.ibmappdomain.cloud','/flight','');
 			</script>
 	
 			<h2>Auth Service </h2>	 

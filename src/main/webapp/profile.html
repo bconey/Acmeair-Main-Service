@@ -57,7 +57,7 @@
 		    
     function loadCustomerProfileData(userid) {
 	    	dojo.xhrGet({
-				url: window.location.protocol + '//' + 'app-staging-coney-0703-aacust.apps.appe-cp-01.axm8.p1.openshiftapps.com' + '/customer/byid/' + userid,
+				url: window.location.protocol + '//' + 'app-staging-coney-0703-aacust.us-east-1.c1a.appengine.dev.ibmappdomain.cloud' + '/customer/byid/' + userid,
 				handleAs: "json",
 				load: function(response, ioArgs) {
 					updateFormData(response);
@@ -116,7 +116,7 @@
 		}
     	
 		dojo.xhrPost({
-			url: window.location.protocol+ '//' + 'app-staging-coney-0703-aacust.apps.appe-cp-01.axm8.p1.openshiftapps.com' + '/customer/byid/' + userid,
+			url: window.location.protocol+ '//' + 'app-staging-coney-0703-aacust.us-east-1.c1a.appengine.dev.ibmappdomain.cloud' + '/customer/byid/' + userid,
 			postData : dojo.toJson(customerData),
 			handleAs: "json",
 			headers: { "Content-Type": "application/json"},
