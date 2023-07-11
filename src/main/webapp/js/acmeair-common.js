@@ -57,7 +57,7 @@ function login() {
 			login: userString,
 			password: document.getElementById('password').value
 		},
-		url: window.location.protocol+ '//' + 'app-staging-coney-0703-aaauth.apps.appe-cp-01.axm8.p1.openshiftapps.com' + '/auth/login',
+		url: window.location.protocol+ '//' + 'app-staging-coney-0711-aaauth.apps.appe-cp-01.axm8.p1.openshiftapps.com' + '/auth/login',
 		load: function(response, ioArgs) {
 			hideLoginWaitDialog();
 			if (response != 'logged in') {
