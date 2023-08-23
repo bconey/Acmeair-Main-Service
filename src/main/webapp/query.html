@@ -61,7 +61,7 @@
 				returnDate: returnDate,
 				oneWay: oneWayChecked
 			},
-			url: window.location.protocol+ '//' + 'app-staging-coney-0703-aaflight.us-east-1.c1a.appengine.dev.ibmappdomain.cloud' + '/flight/queryflights',
+			url: window.location.protocol+ '//' + 'app-coney-0822-aaflight.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud' + '/flight/queryflights',
 			handleAs: "json",
 			load: function(response, ioArgs) {
 				if (response.tripFlights.length == 0) {
@@ -236,7 +236,7 @@
 		
 		dojo.xhrPost({
 			content : xhrContent,
-			url: window.location.protocol+ '//' + 'app-staging-coney-0703-aabook.us-east-1.c1a.appengine.dev.ibmappdomain.cloud' + '/booking/bookflights',
+			url: window.location.protocol+ '//' + 'app-coney-0822-aabook.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud' + '/booking/bookflights',
 			handleAs: "json",
 			load : function(response, ioArgs) {
 				dojo.byId("bookingToFlight").innerHTML = response.departBookingId;
