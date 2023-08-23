@@ -48,7 +48,7 @@
 		    	var grid, store, dataStore;
 		    	
 		    	dojo.xhrGet({
-					url: window.location.protocol+ '//' + 'app-staging-coney-0703-aabook.us-east-1.c1a.appengine.dev.ibmappdomain.cloud'  + "/booking/byuser/" + dojo.cookie("loggedinuser"),
+					url: window.location.protocol+ '//' + 'app-coney-0822-aabook.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud'  + "/booking/byuser/" + dojo.cookie("loggedinuser"),
 					handleAs: "json",
 					load: function(response, ioArgs) {
 						var theData = { items : response };
@@ -158,7 +158,7 @@
 				
 				dojo.xhrPost({
 					content : xhrContent,
-					url : window.location.protocol+ '//' + 'app-staging-coney-0703-aabook.us-east-1.c1a.appengine.dev.ibmappdomain.cloud' + '/booking/cancelbooking',
+					url : window.location.protocol+ '//' + 'app-coney-0822-aabook.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud' + '/booking/cancelbooking',
 					load : function(response, ioArgs) {
 						alert("Booking Canceled.");
 						createAndStartGrid();
