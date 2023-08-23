@@ -57,7 +57,7 @@ function login() {
 			login: userString,
 			password: document.getElementById('password').value
 		},
-		url: window.location.protocol+ '//' + 'app-staging-coney-0711-aaauth.us-east-1.c1a.appengine.dev.ibmappdomain.cloud' + '/auth/login',
+		url: window.location.protocol+ '//' + 'app-coney-0822-aaauth.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud' + '/auth/login',
 		load: function(response, ioArgs) {
 			hideLoginWaitDialog();
 			if (response != 'logged in') {
