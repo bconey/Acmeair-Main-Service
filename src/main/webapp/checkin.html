@@ -50,6 +50,9 @@
 		    	dojo.xhrGet({
 					url: window.location.protocol+ '//' + 'app-coney-0822-aabook.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud'  + "/booking/byuser/" + dojo.cookie("loggedinuser"),
 					handleAs: "json",
+				        headers: {
+	                                  "Authorization" : "Bearer " + dojo.cookie("Bearer")
+	                                },
 					load: function(response, ioArgs) {
 						var theData = { items : response };
 						var newStore = new dojo.data.ItemFileWriteStore({
