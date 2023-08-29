@@ -60,11 +60,13 @@ function login() {
 		url: window.location.protocol+ '//' + 'app-coney-0822-aaauth.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud' + '/auth/login',
 		load: function(response, ioArgs) {
 			hideLoginWaitDialog();
-			if (response != 'logged in') {
-				// TODO: why isn't error function being called in this case
-				alert('error logging in, response: ' + response);
-				return;
-			}
+			//if (response != 'logged in') {
+			//	// TODO: why isn't error function being called in this case
+			//	alert('error logging in, response: ' + response);
+			//	return;
+			//}
+			dojo.cookie("loggedinuser", userString, {path: '/'});
+			dojo.cookie("Bearer", response, {path: '/'});
 			updateLoggedInUserWelcome();
 		},
 		error: function(response, ioArgs) {
