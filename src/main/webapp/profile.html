@@ -119,7 +119,10 @@
 			url: window.location.protocol+ '//' + 'app-coney-0822-aacust.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud' + '/customer/byid/' + userid,
 			postData : dojo.toJson(customerData),
 			handleAs: "json",
-			headers: { "Content-Type": "application/json"},
+			headers: { 
+			  "Content-Type": "application/json", 
+                          "Authorization" : "Bearer " + dojo.cookie("Bearer")
+                        },
 			load: function(response, ioArgs) {
 				updateFormData(response);
 				dijit.byId('updatedStatusDialog').show()
