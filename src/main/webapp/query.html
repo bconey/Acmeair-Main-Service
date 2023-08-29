@@ -238,6 +238,9 @@
 			content : xhrContent,
 			url: window.location.protocol+ '//' + 'app-coney-0822-aabook.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud' + '/booking/bookflights',
 			handleAs: "json",
+			headers: {
+                          "Authorization" : "Bearer " + dojo.cookie("Bearer")
+                        },
 			load : function(response, ioArgs) {
 				dojo.byId("bookingToFlight").innerHTML = response.departBookingId;
 				if (response.returnBookingId) {
