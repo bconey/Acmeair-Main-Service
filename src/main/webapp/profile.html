@@ -59,6 +59,9 @@
 	    	dojo.xhrGet({
 				url: window.location.protocol + '//' + 'app-coney-0822-aacust.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud' + '/customer/byid/' + userid,
 				handleAs: "json",
+			        headers: {
+                                  "Authorization" : "Bearer " + dojo.cookie("Bearer")
+                                },
 				load: function(response, ioArgs) {
 					updateFormData(response);
 				},
