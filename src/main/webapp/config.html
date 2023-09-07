@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dijit/themes/dijit.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   
+  <script type="text/javascript" src="js/acmeair-vars.js"></script>
   <script type="text/javascript" src="js/acmeair-common.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dojo/dojo.js" djConfig="parseOnLoad: true"></script>
 
@@ -94,7 +95,7 @@
     	var airportCodeMapping, booking, customer, customerSession, flight, flightSegment;
 
     	dojo.xhrGet({
-			url: window.location.protocol+ '//' + 'app-coney-0822-aacust.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud' + '/customer/config/countCustomers',
+			url: window.location.protocol+ '//' + customerHost + '/customer/config/countCustomers',
 			handleAs: "json",
 			load: function(response, ioArgs) {	
 		    	//alert("Response: " + response);
@@ -106,7 +107,7 @@
     	});
     	
        	dojo.xhrGet({
-			url: window.location.protocol+ '//' + 'app-coney-0822-aaflight.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud' + '/flight/config/countFlights',
+			url: window.location.protocol+ '//' + flightHost + '/flight/config/countFlights',
 			handleAs: "json",
 			load: function(response, ioArgs) {			    	
 		    	document.getElementById('flightData').innerHTML=response;
@@ -117,7 +118,7 @@
     	});
 	 
        	dojo.xhrGet({
-			url: window.location.protocol+ '//' + 'app-coney-0822-aaflight.us-east-1.c1.appflow.dev.ibmappdomain.cloud' + '/flight/config/countFlightSegments',
+			url: window.location.protocol+ '//' + flightHost + '/flight/config/countFlightSegments',
 			handleAs: "json",
 			load: function(response, ioArgs) {			    
 		    	document.getElementById('flightSegmentData').innerHTML=response;
@@ -129,7 +130,7 @@
        	
        	
     	dojo.xhrGet({
-			url: window.location.protocol+ '//' + 'app-coney-0822-aabook.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud' + '/booking/config/countBookings',
+			url: window.location.protocol+ '//' + bookingHost + '/booking/config/countBookings',
 			handleAs: "json",
 			load: function(response, ioArgs) {	
 		    	document.getElementById('bookingData').innerHTML=response;
@@ -141,7 +142,7 @@
     	
     	dojo.xhrGet({
     		
-			url: window.location.protocol+ '//' + 'app-coney-0822-aaflight.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud' + '/flight/config/countAirports',
+			url: window.location.protocol+ '//' + flightHost + '/flight/config/countAirports',
 			handleAs: "json",
 			load: function(response, ioArgs) {	
 		    	document.getElementById('airportData').innerHTML=response;
@@ -242,14 +243,14 @@
           </table>
 			
 			<script type="text/javascript">
-				getRuntimeInformation('auth','app-coney-0822-aaauth.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud','/auth','');
+				getRuntimeInformation('auth',authHost,'/auth','');
 				
-				getRuntimeInformation('booking','app-coney-0822-aabook.staging.us-east-1.c1a.appflow.dev.ibmappdomain.cloud','/booking','');
-				getActiveDataServiceInfo('booking','app-coney-0822-aabook.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud','/booking','');
-				getRuntimeInformation('customer','app-coney-0822-aacust.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud','','/customer');
-				getActiveDataServiceInfo('customer','app-coney-0822-aacust.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud','','/customer');
-				getRuntimeInformation('flight','app-coney-0822-aaflight.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud','/flight','');
-				getActiveDataServiceInfo('flight','app-coney-0822-aaflight.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud','/flight','');
+				getRuntimeInformation('booking',bookingHost,'/booking','');
+				getActiveDataServiceInfo('booking',bookingHost,'/booking','');
+				getRuntimeInformation('customer',customerHost,'','/customer');
+				getActiveDataServiceInfo('customer',customerHost,'','/customer');
+				getRuntimeInformation('flight',flightHost,'/flight','');
+				getActiveDataServiceInfo('flight',flightHost,'/flight','');
 			</script>
 	
 			<h2>Auth Service </h2>	 

@@ -23,7 +23,8 @@
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dijit/themes/claro/claro.css">
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dijit/themes/dijit.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  
+
+  <script type="text/javascript" src="js/acmeair-vars.js"></script>
   <script type="text/javascript" src="js/acmeair-common.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dojo/dojo.js" djConfig="parseOnLoad: true"></script>
 
@@ -49,7 +50,7 @@
  
     function loadLoaderConfigData() {
     	dojo.xhrGet({
-			url: window.location.protocol+ '//' + 'app-coney-0822-aacust.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud' + '/customer/loader/query',
+			url: window.location.protocol+ '//' + customerHost + '/customer/loader/query',
 			handleAs: "text",
 			load: function(response, ioArgs) {
 				updateFormData(response);
@@ -60,7 +61,7 @@
 		});
     	
     	dojo.xhrGet({
-        url: window.location.protocol+ '//' + 'app-coney-0822-aaflight.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud' + '/flight/loader/query',
+        url: window.location.protocol+ '//' + flightHost + '/flight/loader/query',
         handleAs: "text",
         load: function(response, ioArgs) {
             updateFlightFormData(response);
@@ -86,7 +87,7 @@
     		content : {
     			numCustomers: dijit.byId('customerSizeInput').value
     		},
-    		url: window.location.protocol+ '//' + 'app-coney-0822-aacust.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud' + '/customer/loader/load',
+    		url: window.location.protocol+ '//' + customerHost + '/customer/loader/load',
     		load: function(response, ioArgs) {
     			hideWaitDialog();
     			alert('Customer Database Loaded, response: ' + response);
@@ -104,7 +105,7 @@
     	  content : {
     	    daysToLoad: dijit.byId('flightDaysInput').value
           },
-    		url: window.location.protocol+ '//' + 'app-coney-0822-aaflight.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud' + '/flight/loader/load',
+    		url: window.location.protocol+ '//' + flightHost + '/flight/loader/load',
     		load: function(response, ioArgs) {
     			hideWaitDialog();
     			alert('Flight Database Loaded, response: ' + response);
@@ -120,7 +121,7 @@
     function clearBookingDB() {
     	showWaitDialog();
     	dojo.xhrGet({
-    		url: window.location.protocol+ '//' + 'app-coney-0822-aabook.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud' + '/booking/loader/load',
+    		url: window.location.protocol+ '//' + bookingHost + '/booking/loader/load',
     		load: function(response, ioArgs) {
     			hideWaitDialog();
     			alert('Booking Database Cleared, response: ' + response);

@@ -24,7 +24,8 @@
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dijit/themes/dijit.css">
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dojox/grid/resources/claroGrid.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  
+ 
+  <script type="text/javascript" src="js/acmeair-vars.js"></script>
   <script type="text/javascript" src="js/acmeair-common.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dojo/dojo.js" djConfig="parseOnLoad: true"></script>
 
@@ -61,7 +62,7 @@
 				returnDate: returnDate,
 				oneWay: oneWayChecked
 			},
-			url: window.location.protocol+ '//' + 'app-coney-0822-aaflight.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud' + '/flight/queryflights',
+			url: window.location.protocol+ '//' + flightHost + '/flight/queryflights',
 			handleAs: "json",
 			load: function(response, ioArgs) {
 				if (response.tripFlights.length == 0) {
@@ -236,7 +237,7 @@
 		
 		dojo.xhrPost({
 			content : xhrContent,
-			url: window.location.protocol+ '//' + 'app-coney-0822-aabook.staging.us-east-1.c1.appflow.dev.ibmappdomain.cloud' + '/booking/bookflights',
+			url: window.location.protocol+ '//' + bookingHost + '/booking/bookflights',
 			handleAs: "json",
 			headers: {
                           "Authorization" : "Bearer " + dojo.cookie("Bearer")
