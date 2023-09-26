@@ -24,7 +24,6 @@
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dijit/themes/dijit.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   
-  <script type="text/javascript" src="js/acmeair-vars.js"></script>
   <script type="text/javascript" src="js/acmeair-common.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dojo/dojo.js" djConfig="parseOnLoad: true"></script>
 
@@ -47,11 +46,11 @@
     	//createAndStartGrid();
     }      
     
-    function getRuntimeInformation(service, locationhost, url1, url2) {
+    function getRuntimeInformation(service, url1, url2) {
     	var grid, store, dataStore;
     	
     	dojo.xhrGet({
-			url: window.location.protocol+ '//' + locationhost + url1 + url2 + '/config/runtime',
+			url: window.location.protocol+ '//' + window.location.host + url1 + url2 + '/config/runtime',
 			handleAs: "json",
 			load: function(response, ioArgs) {
 				var theData = { items : response };
@@ -74,11 +73,11 @@
     
     
     
-    function getActiveDataServiceInfo(service,locationhost,url1,url2) {
+    function getActiveDataServiceInfo(service,url1,url2) {
     	var grid, store, dataStore;
     	
     	dojo.xhrGet({
-			url: window.location.protocol+ '//' + locationhost + url1 + url2 +'/config/activeDataService',
+			url: window.location.protocol+ '//' + window.location.host + url1 + url2 +'/config/activeDataService',
 			handleAs: "text",
 			load: function(response, ioArgs) {	
 		    	document.getElementById('activeServiceLoc_'+service).innerHTML=response;		    	
@@ -95,7 +94,7 @@
     	var airportCodeMapping, booking, customer, customerSession, flight, flightSegment;
 
     	dojo.xhrGet({
-			url: window.location.protocol+ '//' + customerHost + '/customer/config/countCustomers',
+			url: window.location.protocol+ '//' + window.location.host + '/customer/config/countCustomers',
 			handleAs: "json",
 			load: function(response, ioArgs) {	
 		    	//alert("Response: " + response);
@@ -107,7 +106,7 @@
     	});
     	
        	dojo.xhrGet({
-			url: window.location.protocol+ '//' + flightHost + '/flight/config/countFlights',
+			url: window.location.protocol+ '//' + window.location.host + '/flight/config/countFlights',
 			handleAs: "json",
 			load: function(response, ioArgs) {			    	
 		    	document.getElementById('flightData').innerHTML=response;
@@ -118,7 +117,7 @@
     	});
 	 
        	dojo.xhrGet({
-			url: window.location.protocol+ '//' + flightHost + '/flight/config/countFlightSegments',
+			url: window.location.protocol+ '//' + window.location.host + '/flight/config/countFlightSegments',
 			handleAs: "json",
 			load: function(response, ioArgs) {			    
 		    	document.getElementById('flightSegmentData').innerHTML=response;
@@ -130,7 +129,7 @@
        	
        	
     	dojo.xhrGet({
-			url: window.location.protocol+ '//' + bookingHost + '/booking/config/countBookings',
+			url: window.location.protocol+ '//' + window.location.host + '/booking/config/countBookings',
 			handleAs: "json",
 			load: function(response, ioArgs) {	
 		    	document.getElementById('bookingData').innerHTML=response;
@@ -142,7 +141,7 @@
     	
     	dojo.xhrGet({
     		
-			url: window.location.protocol+ '//' + flightHost + '/flight/config/countAirports',
+			url: window.location.protocol+ '//' + window.location.host + '/flight/config/countAirports',
 			handleAs: "json",
 			load: function(response, ioArgs) {	
 		    	document.getElementById('airportData').innerHTML=response;
@@ -243,14 +242,14 @@
           </table>
 			
 			<script type="text/javascript">
-				getRuntimeInformation('auth',authHost,'/auth','');
+				getRuntimeInformation('auth','/auth','');
 				
-				getRuntimeInformation('booking',bookingHost,'/booking','');
-				getActiveDataServiceInfo('booking',bookingHost,'/booking','');
-				getRuntimeInformation('customer',customerHost,'','/customer');
-				getActiveDataServiceInfo('customer',customerHost,'','/customer');
-				getRuntimeInformation('flight',flightHost,'/flight','');
-				getActiveDataServiceInfo('flight',flightHost,'/flight','');
+				getRuntimeInformation('booking','/booking','');
+				getActiveDataServiceInfo('booking','/booking','');
+				getRuntimeInformation('customer','','/customer');
+				getActiveDataServiceInfo('customer','','/customer');
+				getRuntimeInformation('flight','/flight','');
+				getActiveDataServiceInfo('flight','/flight','');
 			</script>
 	
 			<h2>Auth Service </h2>	 

@@ -24,7 +24,6 @@
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dojox/grid/resources/claroGrid.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-  <script type="text/javascript" src="js/acmeair-vars.js"></script>
   <script type="text/javascript" src="js/acmeair-common.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dojo/dojo.js" djConfig="parseOnLoad: true"></script>
 
@@ -49,7 +48,7 @@
 		    	var grid, store, dataStore;
 		    	
 		    	dojo.xhrGet({
-					url: window.location.protocol+ '//' + bookingHost  + "/booking/byuser/" + dojo.cookie("loggedinuser"),
+					url: window.location.protocol+ '//' + window.location.host  + "/booking/byuser/" + dojo.cookie("loggedinuser"),
 					handleAs: "json",
 				        headers: {
 	                                  "Authorization" : "Bearer " + dojo.cookie("Bearer")
@@ -162,7 +161,7 @@
 				
 				dojo.xhrPost({
 					content : xhrContent,
-					url : window.location.protocol+ '//' + bookingHost + '/booking/cancelbooking',
+					url : window.location.protocol+ '//' + window.location.host + '/rest/booking/cancelbooking',
 			                headers: {
                                           "Authorization" : "Bearer " + dojo.cookie("Bearer")
                                         },
