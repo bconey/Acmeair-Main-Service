@@ -50,7 +50,7 @@
     	var grid, store, dataStore;
     	
     	dojo.xhrGet({
-			url: window.location.protocol+ '//' + window.location.host + url1 + url2 + '/config/runtime',
+			url: window.location.protocol+ '//' + window.location.host + '/acmeair/rest/' + url1 + url2 + '/config/runtime',
 			handleAs: "json",
 			load: function(response, ioArgs) {
 				var theData = { items : response };
@@ -77,7 +77,7 @@
     	var grid, store, dataStore;
     	
     	dojo.xhrGet({
-			url: window.location.protocol+ '//' + window.location.host + url1 + url2 +'/config/activeDataService',
+			url: window.location.protocol+ '//' + window.location.host + '/acmeair/rest/' + url1 + url2 +'/config/activeDataService',
 			handleAs: "text",
 			load: function(response, ioArgs) {	
 		    	document.getElementById('activeServiceLoc_'+service).innerHTML=response;		    	
@@ -94,7 +94,7 @@
     	var airportCodeMapping, booking, customer, customerSession, flight, flightSegment;
 
     	dojo.xhrGet({
-			url: window.location.protocol+ '//' + window.location.host + '/customer/config/countCustomers',
+			url: window.location.protocol+ '//' + window.location.host + '/acmeair/rest/customer/config/countCustomers',
 			handleAs: "json",
 			load: function(response, ioArgs) {	
 		    	//alert("Response: " + response);
@@ -106,7 +106,7 @@
     	});
     	
        	dojo.xhrGet({
-			url: window.location.protocol+ '//' + window.location.host + '/flight/config/countFlights',
+			url: window.location.protocol+ '//' + window.location.host + '/acmeair/rest/flight/config/countFlights',
 			handleAs: "json",
 			load: function(response, ioArgs) {			    	
 		    	document.getElementById('flightData').innerHTML=response;
@@ -117,7 +117,7 @@
     	});
 	 
        	dojo.xhrGet({
-			url: window.location.protocol+ '//' + window.location.host + '/flight/config/countFlightSegments',
+			url: window.location.protocol+ '//' + window.location.host + '/acmeair/rest/flight/config/countFlightSegments',
 			handleAs: "json",
 			load: function(response, ioArgs) {			    
 		    	document.getElementById('flightSegmentData').innerHTML=response;
@@ -129,7 +129,7 @@
        	
        	
     	dojo.xhrGet({
-			url: window.location.protocol+ '//' + window.location.host + '/booking/config/countBookings',
+			url: window.location.protocol+ '//' + window.location.host + '/acmeair/rest/booking/config/countBookings',
 			handleAs: "json",
 			load: function(response, ioArgs) {	
 		    	document.getElementById('bookingData').innerHTML=response;
@@ -141,7 +141,7 @@
     	
     	dojo.xhrGet({
     		
-			url: window.location.protocol+ '//' + window.location.host + '/flight/config/countAirports',
+			url: window.location.protocol+ '//' + window.location.host + '/acmeair/rest/flight/config/countAirports',
 			handleAs: "json",
 			load: function(response, ioArgs) {	
 		    	document.getElementById('airportData').innerHTML=response;

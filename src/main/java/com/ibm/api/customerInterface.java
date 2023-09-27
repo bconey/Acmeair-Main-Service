@@ -3,9 +3,7 @@ package com.ibm.api;
 import org.eclipse.microprofile.metrics.annotation.Timed;
 
 import jakarta.annotation.security.RolesAllowed;
-import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.FormParam;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.POST;

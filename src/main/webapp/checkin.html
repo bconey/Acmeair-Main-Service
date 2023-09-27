@@ -48,7 +48,7 @@
 		    	var grid, store, dataStore;
 		    	
 		    	dojo.xhrGet({
-					url: window.location.protocol+ '//' + window.location.host  + "/booking/byuser/" + dojo.cookie("loggedinuser"),
+					url: window.location.protocol+ '//' + window.location.host  + "/acmeair/rest/booking/byuser/" + dojo.cookie("loggedinuser"),
 					handleAs: "json",
 				        headers: {
 	                                  "Authorization" : "Bearer " + dojo.cookie("Bearer")
@@ -161,7 +161,7 @@
 				
 				dojo.xhrPost({
 					content : xhrContent,
-					url : window.location.protocol+ '//' + window.location.host + '/rest/booking/cancelbooking',
+					url : window.location.protocol+ '//' + window.location.host + '/acmeair/rest/booking/cancelbooking',
 			                headers: {
                                           "Authorization" : "Bearer " + dojo.cookie("Bearer")
                                         },

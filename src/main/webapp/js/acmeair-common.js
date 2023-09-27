@@ -57,7 +57,7 @@ function login() {
 			login: userString,
 			password: document.getElementById('password').value
 		},
-		url: window.location.protocol+ '//' + window.location.host + '/rest/auth/login',
+		url: window.location.protocol+ '//' + window.location.host + '/acmeair/rest/auth/login',
 		load: function(response, ioArgs) {
 			hideLoginWaitDialog();
 			//if (response != 'logged in') {

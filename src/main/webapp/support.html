@@ -54,7 +54,7 @@
     	  return string.replace(/(?:\r\n|\r|\n)/g,'<br/>');
       }
 
-	  var chatSocket = new WebSocket("ws://" + window.location.host + "/support/supportrequest");
+	  var chatSocket = new WebSocket("ws://" + window.location.host + "/acmeair/rest/support/supportrequest");
 	  chatSocket.onmessage = function(event) {
 		var jsonObj = JSON.parse(event.data);
 		var displayMessage = "<b>" + jsonObj.agent + "</b>: " + getDateString() + " - " +

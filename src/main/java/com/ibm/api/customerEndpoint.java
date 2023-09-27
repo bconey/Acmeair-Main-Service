@@ -7,8 +7,6 @@ import org.eclipse.microprofile.metrics.annotation.Timed;
 import org.eclipse.microprofile.rest.client.RestClientBuilder;
 
 import jakarta.annotation.security.RolesAllowed;
-import jakarta.ws.rs.Consumes;
-import jakarta.ws.rs.FormParam;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;

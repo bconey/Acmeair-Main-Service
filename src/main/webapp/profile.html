@@ -57,7 +57,7 @@
 		    
     function loadCustomerProfileData(userid) {
 	    	dojo.xhrGet({
-				url: window.location.protocol + '//' + window.location.host + '/customer/byid/' + userid,
+				url: window.location.protocol + '//' + window.location.host + '/acmeair/rest/customer/byid/' + userid,
 				handleAs: "json",
 			        headers: {
                                   "Authorization" : "Bearer " + dojo.cookie("Bearer")
@@ -119,7 +119,7 @@
 		}
     	
 		dojo.xhrPost({
-			url: window.location.protocol+ '//' + window.location.host + '/customer/byid/' + userid,
+			url: window.location.protocol+ '//' + window.location.host + '/acmeair/rest/customer/byid/' + userid,
 			postData : dojo.toJson(customerData),
 			handleAs: "json",
 			headers: { 
